@@ -5,21 +5,40 @@
 *.exe
 *.exe~
 *.dll
-*.so
 *.dylib
+*.o
+*.a
+*.so
+*.prof
+*.pprof
+*.pdf
 
 # Test binary, built with `go test -c`
 *.test
 
-# Output of the go coverage tool, specifically when used with LiteIDE
+# IDE specific metadata
+.idea/
+
+# Apple fodder
+.DS_Store
+
+# Test and Lint output files
 *.out
+*.gcov
+*.lcov
+*.log
 
-# Dependency directories (remove the comment below to include it)
-# vendor/
+# Temp files directory
+downloads/
+tmp/
 
-# Go workspace file
-go.work
-go.work.sum
+# exclude python virtual env folder used by local tartufo
+.venv/
 
-# env file
-.env
+# exclude go lang build destination directory
+bld/
+build/
+dist/
+
+# exclude go lang vendor folder added in go 1.18
+vendor/
