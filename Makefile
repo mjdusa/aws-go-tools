@@ -124,8 +124,8 @@ prebuild: init clean goclean $(BUILD_DIR) $(DIST_DIR) go.mod
 .PHONY: golangcilint
 golangcilint: init $(LINTER_REPORT)
 	echo "Running golangci-lint"
-	${GOBIN}/golangci-lint --version
-	${GOBIN}/golangci-lint run --verbose --tests=true --timeout=1m \
+	golangci-lint --version
+	golangci-lint run --verbose --tests=true --timeout=1m \
 	  --config=./.github/linters/.golangci.yml --issues-exit-code=0 > "$(LINTER_REPORT)"
 	cat $(LINTER_REPORT)
 
