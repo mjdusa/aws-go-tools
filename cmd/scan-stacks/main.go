@@ -113,7 +113,7 @@ func cloudFormationListStacks(ctx context.Context, cfg aws.Config) (*[]cfTypes.S
 }
 
 // cloudFormationListStackResources retrieves a list of CloudFormation stack resources.
-func cloudFormationListStackResources(ctx context.Context, cfg aws.Config, StackId string) (*[]cfTypes.StackResourceSummary, error) {
+func cloudFormationListStackResources(ctx context.Context, cfg aws.Config, stackID string) (*[]cfTypes.StackResourceSummary, error) {
 	cfClient := cloudformation.NewFromConfig(cfg)
 
 	var allStackResources []cfTypes.StackResourceSummary
@@ -121,7 +121,7 @@ func cloudFormationListStackResources(ctx context.Context, cfg aws.Config, Stack
 
 	for {
 		input := cloudformation.ListStackResourcesInput{
-			StackName: aws.String(StackId),
+			StackName: aws.String(stackID),
 			NextToken: nextToken, // Use the token to fetch the next page
 		}
 
@@ -250,8 +250,8 @@ func NilSafeString(s *string) string {
 	return *s
 }
 
-func NilSafeTime(t *time.Time, fmt string) string {
-	if t == nil {
+func NilSafeTime(tmp *time.Time, fmt string) string {
+	if tmp == nil {
 		return "<nil>"
 	}
 
@@ -259,5 +259,5 @@ func NilSafeTime(t *time.Time, fmt string) string {
 		fmt = time.RFC3339
 	}
 
-	return t.Format(fmt)
+	return tmp.Format(fmt)
 }
