@@ -8,7 +8,7 @@ require (
 	github.com/aws/aws-sdk-go-v2/service/cloudformation v1.67.1
 	github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs v1.58.2
 	github.com/aws/aws-sdk-go-v2/service/ec2 v1.257.2
-	github.com/aws/aws-sdk-go-v2/service/ecs v1.65.1
+	github.com/aws/aws-sdk-go-v2/service/ecs v1.65.2
 	github.com/aws/aws-sdk-go-v2/service/sts v1.38.7
 )
 
