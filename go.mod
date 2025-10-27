@@ -3,7 +3,7 @@ module github.com/mdonahue-godaddy/aws-go-tools
 go 1.24.2
 
 require (
-	github.com/aws/aws-sdk-go-v2 v1.39.3
+	github.com/aws/aws-sdk-go-v2 v1.39.4
 	github.com/aws/aws-sdk-go-v2/config v1.31.13
 	github.com/aws/aws-sdk-go-v2/service/cloudformation v1.67.1
 	github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs v1.58.2
